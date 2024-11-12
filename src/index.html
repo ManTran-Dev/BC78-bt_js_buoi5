@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./output.css" rel="stylesheet" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 class="text-center py-10 text-4xl font-extrabold dark:text-white">
+      Bài tập<small class="ms-2 font-semibold text-gray-500 dark:text-gray-400"
+        >JS Buổi 5</small
+      >
+    </h1>
+
+    <div class="md:flex max-w-screen-xl mx-auto">
+      <ul
+        class="flex-column space-y space-y-4 text-sm font-medium text-gray-500 dark:text-gray-400 md:me-4 mb-4 md:mb-0"
+        id="default-tab"
+        data-tabs-toggle="#default-tab-content"
+        role="tablist"
+        data-tabs-active-classes="bg-blue-700 text-white"
+        data-tabs-inactive-classes="bg-gray-50"
+      >
+        <li>
+          <a
+            href="#"
+            class="inline-flex items-center px-4 py-3 text-white bg-blue-700 rounded-lg active w-full dark:bg-blue-600"
+            id="qlsv-tab"
+            data-tabs-target="#QLSV"
+            type="button"
+            role="tab"
+            aria-controls="qlsv"
+            aria-selected="false"
+          >
+            <i class="fa-solid fa-book-open-reader pr-5"></i>
+            Quản lý sinh viên
+          </a>
+        </li>
+        <li>
+          <a
+            href="#"
+            class="inline-flex items-center px-4 py-3 rounded-lg hover:text-gray-900 bg-gray-50 hover:bg-gray-100 w-full dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:text-white"
+            id="tienDien-tab"
+            data-tabs-target="#tienDien"
+            type="button"
+            role="tab"
+            aria-controls="tienDien"
+            aria-selected="false"
+          >
+            <i class="fa-solid fa-book-open-reader pr-5"></i>
+            Tính tiền điện
+          </a>
+        </li>
+        <li>
+          <a
+            href="#"
+            class="inline-flex items-center px-4 py-3 rounded-lg hover:text-gray-900 bg-gray-50 hover:bg-gray-100 w-full dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:text-white"
+            id="thue-tab"
+            data-tabs-target="#thue"
+            type="button"
+            role="tab"
+            aria-controls="thue"
+            aria-selected="false"
+          >
+            <i class="fa-solid fa-book-open-reader pr-5"></i>
+            Tính thuế thu nhập
+          </a>
+        </li>
+        <li>
+          <a
+            href="#"
+            class="inline-flex items-center px-4 py-3 rounded-lg hover:text-gray-900 bg-gray-50 hover:bg-gray-100 w-full dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:text-white"
+            id="tienCap-tab"
+            data-tabs-target="#tienCap"
+            type="button"
+            role="tab"
+            aria-controls="tienCap"
+            aria-selected="false"
+          >
+            <i class="fa-solid fa-book-open-reader pr-5"></i>
+            Tính tiền cáp
+          </a>
+        </li>
+      </ul>
+      <div id="default-tab-content" class="w-full">
+        <!-- Bài tập 1: Quản lý sinh viên -->
+        <div
+          class="p-6 bg-gray-50 text-medium text-gray-500 dark:text-gray-400 dark:bg-gray-800 rounded-lg w-full"
+          id="QLSV"
+          role="tabpanel"
+          aria-labelledby="qlsv-tab"
+        >
+          <h3
+            class="text-xl font-bold text-gray-900 dark:text-white mb-10 uppercase"
+          >
+            Quản lý Sinh Viên
+          </h3>
+          <!-- Điểm chuẩn -->
+
+          <div class="grid grid-rows-2 grid-cols-3 gap-5">
+            <form>
+              <input
+                type="number"
+                id="diemChuan"
+                aria-describedby="helper-text-explanation"
+                class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="ĐIỂM CHUẨN"
+                required
+              />
+            </form>
+
+            <!-- Khu vực -->
+            <select
+              name="kv"
+              id="kv"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            >
+              <option>Chọn khu vực</option>
+              <option>A</option>
+              <option>B</option>
+              <option>C</option>
+            </select>
+
+            <!-- Đối tượng -->
+            <select
+              name="dt"
+              id="dt"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            >
+              <option>Chọn đối tượng</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+            </select>
+
+            <!-- Điểm môn thứ 1 -->
+            <form>
+              <input
+                type="number"
+                id="diem1"
+                aria-describedby="helper-text-explanation"
+                class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="Điểm môn thứ 1"
+                required
+              />
+            </form>
+
+            <!-- Điểm môn thứ 2 -->
+            <form>
+              <input
+                type="number"
+                id="diem2"
+                aria-describedby="helper-text-explanation"
+                class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="Điểm môn thứ 2"
+                required
+              />
+            </form>
+
+            <!-- Điểm môn thứ 3 -->
+            <form>
+              <input
+                type="number"
+                id="diem3"
+                aria-describedby="helper-text-explanation"
+                class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="Điểm môn thứ 3"
+                required
+              />
+            </form>
+          </div>
+          <button
+            type="button"
+            class="mt-10 text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            onclick="quanLySV()"
+          >
+            Kết Quả
+          </button>
+          <div id="divInform_1" class="text-xl mt-5"></div>
+        </div>
+
+        <!-- Bài tập 2: Tính tiền điện -->
+        <div
+          class="p-6 bg-gray-50 text-medium text-gray-500 dark:text-gray-400 dark:bg-gray-800 rounded-lg w-full"
+          id="tienDien"
+          role="tabpanel"
+          aria-labelledby="tienDien-tab"
+        >
+          <h3
+            class="text-xl font-bold text-gray-900 dark:text-white mb-10 uppercase"
+          >
+            Tính tiền điện
+          </h3>
+
+          <div class="flex gap-5">
+            <!-- Nhập họ tên -->
+            <form>
+              <input
+                type="text"
+                id="nameKH"
+                aria-describedby="helper-text-explanation"
+                class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="Nhập họ tên"
+                required
+              />
+            </form>
+
+            <!-- Nhập số kw -->
+            <form>
+              <input
+                type="number"
+                id="kwDien"
+                aria-describedby="helper-text-explanation"
+                class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="Nhập số kw"
+                required
+              />
+            </form>
+          </div>
+          <button
+            type="button"
+            class="mt-10 text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            onclick="tienDien()"
+          >
+            Tính tiền điện
+          </button>
+          <div id="divInform_2" class="text-xl mt-5"></div>
+        </div>
+
+        <!-- Bài tập 3: Tính thuế thu nhập cá nhân -->
+        <div
+          class="p-6 bg-gray-50 text-medium text-gray-500 dark:text-gray-400 dark:bg-gray-800 rounded-lg w-full"
+          id="thue"
+          role="tabpanel"
+          aria-labelledby="thue-tab"
+        >
+          <h3
+            class="text-xl font-bold text-gray-900 dark:text-white mb-10 uppercase"
+          >
+            Tính thuế thu nhập cá nhân
+          </h3>
+          <!-- Họ tên -->
+
+          <div class="flex gap-5">
+            <!-- Nhập họ tên -->
+            <form>
+              <input
+                type="text"
+                id="hoTen"
+                aria-describedby="helper-text-explanation"
+                class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="Nhập họ tên"
+                required
+              />
+            </form>
+
+            <!-- Tổng thu nhập năm-->
+            <form>
+              <input
+                type="number"
+                id="tongThuNN"
+                aria-describedby="helper-text-explanation"
+                class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="Tổng thu nhập năm"
+                required
+              />
+            </form>
+
+            <!-- Số người phụ thuộc -->
+            <form>
+              <input
+                type="number"
+                id="soNguoiPT"
+                aria-describedby="helper-text-explanation"
+                class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="Số người phụ thuộc"
+                required
+              />
+            </form>
+          </div>
+          <button
+            type="button"
+            class="mt-10 text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            onclick="tinhThueTNCN()"
+          >
+            Tính tiền thuế
+          </button>
+          <div id="divInform_3" class="text-xl mt-5"></div>
+        </div>
+
+        <!-- Bài tập 4: Tính tiền cáp -->
+        <div
+          class="p-6 bg-gray-50 text-medium text-gray-500 dark:text-gray-400 dark:bg-gray-800 rounded-lg w-full"
+          id="tienCap"
+          role="tabpanel"
+          aria-labelledby="tienCap-tab"
+        >
+          <h3
+            class="text-xl font-bold text-gray-900 dark:text-white mb-10 uppercase"
+          >
+            Tính tiền cáp
+          </h3>
+
+          <div class="flex gap-5">
+            <!-- Chọn loại khách hàng -->
+            <select
+              id="loaiKH"
+              name="loaiKH"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            >
+              <option>Chọn loại khách hàng</option>
+              <option id="nhadan" value="NHA_DAN">Nhà dân</option>
+              <option id="doanhnghiep" value="DOANH_NGHIEP">
+                Doanh nghiệp
+              </option>
+            </select>
+
+            <!-- Nhập mã KH -->
+            <form>
+              <input
+                type="text"
+                id="maKH"
+                aria-describedby="helper-text-explanation"
+                class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="Nhập mã khách hàng"
+                required
+              />
+            </form>
+
+            <!-- Số kênh cao cấp-->
+            <form>
+              <input
+                type="number"
+                id="soKenhCaoCap"
+                aria-describedby="helper-text-explanation"
+                class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="Số kênh cao cấp"
+                required
+              />
+            </form>
+
+            <!-- Số kết nối -->
+            <form>
+              <input
+                type="number"
+                id="soKetNoi"
+                aria-describedby="helper-text-explanation"
+                class="hidden w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="Số kết nối"
+                required
+              />
+            </form>
+          </div>
+          <button
+            type="button"
+            class="mt-10 text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            onclick="tinhTienCap()"
+          >
+            Tính tiền cáp
+          </button>
+          <div id="divInform_4" class="text-xl mt-5"></div>
+        </div>
+      </div>
+    </div>
+    <script src="./../js/main.js"></script>
+    <script src="./../js/main_2.js"></script>
+    <script src="./../js/main_3.js"></script>
+    <script src="./../js/main_4.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+  </body>
+</html>
